@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Susan Johana Guerrero Mur — Psicóloga · Magíster en Psicología del Consumidor. Investigación de mercados y Customer Experience.">
+<title>Susan J. Guerrero Mur · Investigación con criterio</title>
+<style>
+  :root {
+    color-scheme: light;
+    --tinta: #1A2B3C;
+    --bermellon: #B43E3E;
+    --ocre: #C9A227;
+    --hueso: #F4EFE6;
+    --hueso-dark: #EDE5D4;
+    --grafito: #2B2A28;
+    --gris: #5A5651;
+    --line: #DDD3C2;
+    --serif: 'Playfair Display', 'Cambria', Georgia, 'Times New Roman', serif;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: var(--sans);
+    background: var(--hueso);
+    color: var(--grafito);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+  /* NAV */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(244, 239, 230, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .nav-brand {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--tinta);
+    letter-spacing: -0.3px;
+  }
+  .nav-brand .dot { color: var(--bermellon); }
+  .nav-cta {
+    background: var(--tinta);
+    color: var(--hueso);
+    padding: 9px 18px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s ease;
+  }
+  .nav-cta:hover { background: var(--bermellon); }
+  /* HERO */
+  .hero {
+    background: var(--tinta);
+    color: var(--hueso);
+    padding: 70px 0 80px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: -100px; right: -100px;
+    width: 360px; height: 360px;
+    background: var(--bermellon);
+    border-radius: 50%;
+    opacity: 0.12;
+    filter: blur(40px);
+  }
+  .hero-label {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 11px;
+    color: var(--ocre);
+    font-weight: 700;
+    margin-bottom: 22px;
+  }
+  .hero-name {
+    font-family: var(--serif);
+    font-size: clamp(38px, 7vw, 68px);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -1.2px;
+    margin-bottom: 12px;
+  }
+  .hero-credentials {
+    font-size: clamp(13px, 2.2vw, 16px);
+    color: #DDD3C2;
+    margin-bottom: 32px;
+  }
+  .hero-quote {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(26px, 5vw, 44px);
+    color: var(--hueso);
+    line-height: 1.2;
+    margin: 30px 0 14px 0;
+    border-left: 3px solid var(--bermellon);
+    padding-left: 20px;
+    max-width: 720px;
+    letter-spacing: -0.3px;
+  }
+  .hero-tagline {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 11px;
+    color: var(--ocre);
+    font-weight: 700;
+    margin-bottom: 32px;
+  }
+  .hero-cta-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 18px;
+  }
+  .hero-email-line {
+    margin-top: 18px;
+    font-size: 14px;
+    color: #DDD3C2;
+  }
+  .hero-email-line a {
+    color: var(--ocre);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--ocre);
+  }
+  .hero-email-line a:hover { color: var(--hueso); border-bottom-color: var(--hueso); }
+  /* BUTTONS */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 26px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.2s ease, background 0.2s ease;
+    cursor: pointer;
+    border: none;
+  }
+  .btn:hover { transform: translateY(-1px); }
+  .btn-primary { background: var(--bermellon); color: var(--hueso); }
+  .btn-primary:hover { background: #9C3434; }
+  .btn-secondary {
+    background: transparent;
+    color: var(--hueso);
+    border: 1px solid rgba(244, 239, 230, 0.4);
+  }
+  .btn-secondary:hover { background: rgba(244, 239, 230, 0.08); }
+  /* SECTIONS */
+  section { padding: 56px 0; }
+  .section-label {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 11px;
+    color: var(--bermellon);
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  .section-title {
+    font-family: var(--serif);
+    font-size: clamp(26px, 4.5vw, 38px);
+    color: var(--tinta);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.7px;
+    margin-bottom: 20px;
+    max-width: 720px;
+  }
+  .section-lead {
+    font-family: var(--serif);
+    font-size: clamp(17px, 2.4vw, 21px);
+    line-height: 1.5;
+    color: var(--tinta);
+    margin-bottom: 14px;
+    font-style: italic;
+    max-width: 760px;
+  }
+  .section-text {
+    color: var(--grafito);
+    font-size: 16px;
+    line-height: 1.65;
+    max-width: 760px;
+    margin-bottom: 12px;
+  }
+  .sec-darker { background: var(--hueso-dark); }
+  .sec-dark { background: var(--tinta); color: var(--hueso); }
+  .sec-dark .section-title { color: var(--hueso); }
+  .sec-dark .section-lead { color: #DDD3C2; }
+  .sec-dark .section-text { color: #DDD3C2; }
+  .sec-dark .section-label { color: var(--ocre); }
+  /* SERVICES GRID */
+  .services {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-top: 30px;
+  }
+  .service {
+    background: #FBF8F1;
+    border: 1px solid var(--line);
+    padding: 22px 22px;
+    border-radius: 8px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .service:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(26, 43, 60, 0.08);
+  }
+  .service-num {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--bermellon);
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .service-title {
+    font-family: var(--serif);
+    color: var(--tinta);
+    font-weight: 700;
+    font-size: 19px;
+    margin-bottom: 8px;
+    letter-spacing: -0.3px;
+  }
+  .service-desc {
+    color: var(--grafito);
+    font-size: 14.5px;
+    line-height: 1.55;
+    margin-bottom: 10px;
+  }
+  .service-tags {
+    color: var(--gris);
+    font-size: 12px;
+    font-style: italic;
+    border-top: 1px solid var(--line);
+    padding-top: 10px;
+  }
+  /* DIFFERENTIATOR */
+  .differentiator-quote {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(22px, 3.6vw, 30px);
+    color: var(--tinta);
+    line-height: 1.3;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    border-left: 4px solid var(--bermellon);
+    max-width: 800px;
+  }
+  /* COMBINED — SECTORS + STACK */
+  .combined-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin-top: 28px;
+  }
+  .combined-block h3 {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--bermellon);
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 14px;
+  }
+  .sector-row {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 14.5px;
+    color: var(--grafito);
+  }
+  .sector-row:last-child { border-bottom: 0; }
+  .sector-row strong {
+    color: var(--tinta);
+    font-family: var(--serif);
+    font-weight: 700;
+  }
+  .tags { display: flex; flex-wrap: wrap; gap: 7px; }
+  .tag {
+    display: inline-block;
+    background: #FBF8F1;
+    border: 1px solid var(--line);
+    color: var(--tinta);
+    padding: 6px 14px;
+    font-size: 12.5px;
+    border-radius: 999px;
+    font-weight: 500;
+  }
+  .tag.dark { background: var(--tinta); border-color: var(--tinta); color: var(--hueso); }
+  /* CTA */
+  .cta-final { padding: 70px 0 60px 0; }
+  .cta-title-final {
+    font-family: var(--serif);
+    font-size: clamp(32px, 5.5vw, 50px);
+    color: var(--hueso);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -1px;
+    margin-bottom: 20px;
+  }
+  .cta-final-text {
+    font-size: clamp(15px, 2.1vw, 18px);
+    color: #DDD3C2;
+    line-height: 1.6;
+    margin-bottom: 28px;
+    max-width: 640px;
+  }
+  .cta-final-buttons { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 12px; }
+  .cta-email-line {
+    font-size: 14px;
+    color: #DDD3C2;
+    margin-bottom: 50px;
+  }
+  .cta-email-line a {
+    color: var(--ocre);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--ocre);
+  }
+  .cta-email-line a:hover { color: var(--hueso); border-bottom-color: var(--hueso); }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 22px;
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(244, 239, 230, 0.15);
+  }
+  .contact-item .ci-label {
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--ocre);
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .contact-item .ci-value {
+    font-size: 16px;
+    color: var(--hueso);
+    word-break: break-word;
+  }
+  .contact-item a {
+    color: var(--hueso);
+    text-decoration: none;
+    border-bottom: 1px dotted rgba(244, 239, 230, 0.4);
+  }
+  .contact-item a:hover { border-bottom-color: var(--ocre); color: var(--ocre); }
+  /* FOOTER */
+  .footer {
+    text-align: center;
+    padding: 26px 24px;
+    background: var(--tinta);
+    color: rgba(244, 239, 230, 0.5);
+    font-size: 13px;
+    border-top: 1px solid rgba(244, 239, 230, 0.1);
+    font-family: var(--serif);
+    font-style: italic;
+  }
+  /* COPY-EMAIL TOAST */
+  .copy-feedback {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--tinta);
+    color: var(--hueso);
+    padding: 12px 22px;
+    border-radius: 999px;
+    font-size: 14px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 200;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  }
+  .copy-feedback.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-6px);
+  }
+  /* RESPONSIVE */
+  @media (min-width: 640px) {
+    .services { grid-template-columns: 1fr 1fr; gap: 18px; }
+    .contact-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (min-width: 768px) {
+    .hero { padding: 110px 0 110px 0; }
+    section { padding: 80px 0; }
+    .combined-grid { grid-template-columns: 1.1fr 1fr; gap: 50px; }
+    .contact-grid { grid-template-columns: 1fr 1fr 1fr; }
+  }
+  @media (min-width: 1024px) {
+    .hero { padding: 130px 0 130px 0; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-brand">Susan J. Guerrero<span class="dot">.</span></div>
+    <a class="nav-cta" href="mailto:susanj.guerrerom@gmail.com?subject=Proyecto%20de%20investigaci%C3%B3n" target="_blank" rel="noopener">Conversemos</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <div class="hero-label">Brochure de Servicios · 2026</div>
+    <h1 class="hero-name">Susan Johana<br/>Guerrero Mur</h1>
+    <div class="hero-credentials">Psicóloga · Magíster en Psicología del Consumidor</div>
+    <div class="hero-quote">"Investigación con criterio."</div>
+    <div class="hero-tagline">Investigación de Mercados · Customer Experience</div>
+    <div class="hero-cta-row">
+      <a class="btn btn-primary" href="mailto:susanj.guerrerom@gmail.com?subject=Proyecto%20de%20investigaci%C3%B3n" target="_blank" rel="noopener" id="ctaEmail1">Escríbeme</a>
+      <a class="btn btn-secondary" href="https://wa.me/573132386723?text=Hola%20Susan,%20te%20escribo%20por%20un%20proyecto." target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+    <div class="hero-email-line">o copia mi email: <a href="mailto:susanj.guerrerom@gmail.com" id="copyEmail1">susanj.guerrerom@gmail.com</a></div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="container">
+    <div class="section-label">Quién soy</div>
+    <h2 class="section-title">Una mirada con método.</h2>
+    <p class="section-lead">Psicóloga y Magíster en Psicología del Consumidor. Apoyo a agencias de investigación y áreas de CX en estudios cualitativos y cuantitativos, gestión de retroalimentación de clientes y análisis de experiencia.</p>
+    <p class="section-text">Combino <strong>rigor metodológico</strong> con escucha empática, manejo ético de la información y entrega ordenada — portada, contexto, hallazgos, conclusiones y próximos pasos. Me integro rápido a equipos y respeto los tiempos del cliente.</p>
+  </div>
+</section>
+
+<section class="sec-darker" id="servicios">
+  <div class="container">
+    <div class="section-label">Qué hago</div>
+    <h2 class="section-title">Servicios que ofrezco.</h2>
+    <div class="services">
+      <div class="service">
+        <div class="service-num">01</div>
+        <div class="service-title">Investigación cualitativa</div>
+        <div class="service-desc">Entrevistas en profundidad, focus groups y paneles de expertos. Análisis con Atlas.ti y debriefs accionables.</div>
+        <div class="service-tags">Entrevistas · Focus groups · Debrief</div>
+      </div>
+      <div class="service">
+        <div class="service-num">02</div>
+        <div class="service-title">Investigación cuantitativa</div>
+        <div class="service-desc">Diseño de instrumentos, levantamiento, análisis estadístico y reportes ejecutivos para decisión.</div>
+        <div class="service-tags">Encuestas · JASP · Reportes</div>
+      </div>
+      <div class="service">
+        <div class="service-num">03</div>
+        <div class="service-title">Voz del Cliente y CX</div>
+        <div class="service-desc">Gestión de retroalimentación de clientes, medición de NPS y CSAT, articulación de hallazgos para áreas operativas.</div>
+        <div class="service-tags">VoC · NPS · CSAT</div>
+      </div>
+      <div class="service">
+        <div class="service-num">04</div>
+        <div class="service-title">Customer Journey & Service Blueprint</div>
+        <div class="service-desc">Construcción y colaboración en mapeos de experiencia para identificar pain points y oportunidades de mejora.</div>
+        <div class="service-tags">Journey Mapping · Service Blueprint</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="diferencial">
+  <div class="container">
+    <div class="section-label">Qué me hace diferente</div>
+    <h2 class="section-title">Rigor con lectura cultural.</h2>
+    <p class="differentiator-quote">"Combino rigor metodológico con una lectura cultural del consumo."</p>
+    <p class="section-text">Por mi formación en psicología del consumidor, los hallazgos van más allá del "qué pasa" y llegan al "por qué pasa". Para agencias y áreas de CX, eso se traduce en <strong>segmentaciones más finas</strong>, <strong>recomendaciones más útiles</strong> y reportes que sostienen una conversación con el equipo de marca.</p>
+  </div>
+</section>
+
+<section class="sec-darker" id="trayectoria">
+  <div class="container">
+    <div class="section-label">Trayectoria y stack</div>
+    <h2 class="section-title">Sectores y herramientas.</h2>
+
+    <div class="combined-grid">
+      <div class="combined-block">
+        <h3>Sectores donde he trabajado</h3>
+        <div class="sector-row"><strong>Educación superior</strong> — permanencia y experiencia estudiantil.</div>
+        <div class="sector-row"><strong>Agroindustria</strong> — benchmarking y exportación.</div>
+        <div class="sector-row"><strong>Vivienda</strong> — experiencia y satisfacción del cliente.</div>
+        <div class="sector-row"><strong>Consumo masivo</strong> — pruebas de empaque y comportamiento.</div>
+        <div class="sector-row"><strong>Académico-investigativo</strong> — cambio comportamental y consumo.</div>
+      </div>
+
+      <div class="combined-block">
+        <h3>Stack profesional</h3>
+        <div class="tags" style="margin-bottom: 12px;">
+          <span class="tag dark">Atlas.ti</span>
+          <span class="tag dark">JASP</span>
+          <span class="tag dark">SPADIES</span>
+        </div>
+        <div class="tags">
+          <span class="tag">Excel avanzado</span>
+          <span class="tag">PowerPoint</span>
+          <span class="tag">Asana</span>
+          <span class="tag">Canva</span>
+          <span class="tag">Microsoft Office</span>
+          <span class="tag">Claude AI</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-dark cta-final" id="contacto">
+  <div class="container">
+    <div class="section-label">¿Tienes un proyecto en mente?</div>
+    <h2 class="cta-title-final">Conversemos.<br/>Estudio el caso<br/>en 24 horas.</h2>
+    <p class="cta-final-text">Cuéntame qué necesita tu agencia o área de CX. Lo reviso, te confirmo si soy la persona adecuada y te envío una propuesta clara con alcance, tiempos y honorarios.</p>
+    <div class="cta-final-buttons">
+      <a class="btn btn-primary" href="mailto:susanj.guerrerom@gmail.com?subject=Proyecto%20de%20investigaci%C3%B3n" target="_blank" rel="noopener" id="ctaEmail2">Enviar correo</a>
+      <a class="btn btn-secondary" href="https://wa.me/573132386723?text=Hola%20Susan,%20te%20escribo%20por%20un%20proyecto." target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+    <div class="cta-email-line">o cópialo: <a href="mailto:susanj.guerrerom@gmail.com" id="copyEmail2">susanj.guerrerom@gmail.com</a></div>
+
+    <div class="contact-grid">
+      <div class="contact-item">
+        <div class="ci-label">Email</div>
+        <div class="ci-value"><a href="mailto:susanj.guerrerom@gmail.com" target="_blank" rel="noopener">susanj.guerrerom@gmail.com</a></div>
+      </div>
+      <div class="contact-item">
+        <div class="ci-label">Cel · WhatsApp</div>
+        <div class="ci-value"><a href="tel:+573132386723">+57 313 238 6723</a></div>
+      </div>
+      <div class="contact-item">
+        <div class="ci-label">Ubicación</div>
+        <div class="ci-value">Bogotá · Colombia<br/><span style="font-size: 13px; color: #DDD3C2;">Disponible para remoto</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">Susan Johana Guerrero Mur · 2026 · Investigación con criterio.</footer>
+
+<div class="copy-feedback" id="copyToast">Email copiado al portapapeles</div>
+
+<script>
+  // Si mailto no abre, ofrecer copiar al portapapeles como respaldo
+  function copyToClipboard(text) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      return navigator.clipboard.writeText(text);
+    }
+    // Fallback antiguo
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); } catch (e) {}
+    document.body.removeChild(ta);
+    return Promise.resolve();
+  }
+  function showToast() {
+    const t = document.getElementById('copyToast');
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 1800);
+  }
+  // Doble clic / clic largo en el email lo copia. El click normal abre mailto.
+  ['copyEmail1', 'copyEmail2'].forEach(id => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.addEventListener('dblclick', (e) => {
+      e.preventDefault();
+      copyToClipboard('susanj.guerrerom@gmail.com').then(showToast);
+    });
+  });
+  // Si mailto no abre nada después de 600 ms, intentar copiar al portapapeles
+  ['ctaEmail1', 'ctaEmail2'].forEach(id => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.addEventListener('click', (e) => {
+      const before = Date.now();
+      setTimeout(() => {
+        if (document.hasFocus() && Date.now() - before < 1500) {
+          copyToClipboard('susanj.guerrerom@gmail.com').then(showToast);
+        }
+      }, 700);
+    });
+  });
+</script>
+
+</body>
+</html>
